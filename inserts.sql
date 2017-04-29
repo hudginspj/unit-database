@@ -14,6 +14,13 @@ insert into platoon (platoon_name) values ('2ND');
 );*/
 
 insert into vehicle (vehicle_number, platoon_name, vehicle_order) 
+    values ('100001', '1ST', 1);
+insert into vehicle (vehicle_number, platoon_name, vehicle_order) 
+    values ('100002', '1ST', 2);
+insert into vehicle (vehicle_number, platoon_name, vehicle_order) 
+    values ('100003', '1ST', 3);
+
+insert into vehicle (vehicle_number, platoon_name, vehicle_order) 
     values ('200001', '2ND', 1);
 insert into vehicle (vehicle_number, platoon_name, vehicle_order) 
     values ('200002', '2ND', 2);
@@ -31,6 +38,11 @@ insert into vehicle (vehicle_number, platoon_name, vehicle_order)
 );*/
 
 insert into marine (id_number, last_name, first_name, mil_rank, blood_type, vehicle_number)
+  values (2000000001, 'SCOUT', 'SCOUTY', 'LCPL', 'O+', 100001);
+
+insert into marine (id_number, last_name, first_name, mil_rank, blood_type, vehicle_number)
+  values (1000000008, 'WAGNER', 'JOE', 'PFC', 'O+', 200003);
+insert into marine (id_number, last_name, first_name, mil_rank, blood_type, vehicle_number)
   values (1000000001, 'SMITH', 'BOB', 'SGT', 'O+', 200001);
 insert into marine (id_number, last_name, first_name, mil_rank, blood_type, vehicle_number)
   values (1000000002, 'STEVENS', 'STEVEN', 'CPL', 'O+', 200001);
@@ -44,8 +56,7 @@ insert into marine (id_number, last_name, first_name, mil_rank, blood_type, vehi
   values (1000000006, 'KENT', 'RICK', 'PVT', 'O+', 200002);
 insert into marine (id_number, last_name, first_name, mil_rank, blood_type, vehicle_number)
   values (1000000007, 'RICHMOND', 'JOHN', 'CPL', 'O+', 200003);
-insert into marine (id_number, last_name, first_name, mil_rank, blood_type, vehicle_number)
-  values (1000000008, 'WAGNER', 'JOE', 'PFC', 'O+', 200003);
+
 
 
 /*create table marine (
@@ -69,6 +80,8 @@ insert into equipment_type (designation, description) values ('M120', 'Absurdly 
 insert into equipment_type (designation, description) values ('PAS-28', 'Night Vision');
 insert into equipment_type (designation, description) values ('M2', 'Really Big Gun');
 insert into equipment_type (designation, description) values ('MDO', 'Optic');
+insert into equipment_type (designation, description) values ('PRC-160', 'Radio');
+insert into equipment_type (designation, description) values ('COMPASS', 'Compass');
 
 /*create table equipment_type(
   designation VARCHAR2(10),
@@ -82,8 +95,8 @@ insert into equipment (serial_number, designation, id_number, maintenance_status
  values ('8586568586', 'MDO', 1000000001, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
  values ('4574774', 'M16', 1000000001, 'UP');
-insert into equipment (serial_number, designation, id_number, maintenance_status)
- values ('745775475', 'PAS-28', 1000000001, 'UP');
+--insert into equipment (serial_number, designation, id_number, maintenance_status)
+-- values ('745775475', 'PAS-28', 1000000001, 'UP');
  
 insert into equipment (serial_number, designation, id_number, maintenance_status)
  values ('74747745', 'M9', 1000000002, 'UP');
@@ -149,14 +162,24 @@ insert into equipment (serial_number, designation, id_number, maintenance_status
  values ('96696966996', 'PAS-28', 1000000008, 'UP');
 
  
-/*insert into equipment (serial_number, designation, marine_id, maintenance_status)
- values ('', 'M9', 1000000001, 'UP');
-insert into equipment (serial_number, designation, marine_id, maintenance_status)
- values ('', 'MDO', 1000000001, 'UP');
-insert into equipment (serial_number, designation, marine_id, maintenance_status)
- values ('', 'M16', 1000000001, 'UP');
-insert into equipment (serial_number, designation, marine_id, maintenance_status)
- values ('', 'PAS-28', 1000000001, 'UP');*/
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('2552355', 'M120', 1000000002, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('747457', 'M120', 1000000005, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('757596', 'RADIO', 1000000001, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('856856', 'RADIO', 1000000004, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('9656856', 'RADIO', 1000000007, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('3636434', 'M2', 1000000008, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('8564545', 'COMPASS', 1000000001, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('4753634', 'COMPASS', 1000000004, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('9866898', 'COMPASS', 1000000007, 'UP');
 
 /*create table equipment(
   serial_number VARCHAR2(30),

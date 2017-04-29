@@ -29,8 +29,8 @@ create table address(
 
 create table marine (
   id_number NUMBER(10,0),
-  first_name VARCHAR2(30),
-  last_name VARCHAR2(30) NOT NULL,
+  first_name VARCHAR2(10),
+  last_name VARCHAR2(15) NOT NULL,
   mil_rank VARCHAR2(8) NOT NULL,
   mil_occupation NUMBER(4,0),
   blood_type VARCHAR2(3),
@@ -89,7 +89,7 @@ create table equipment_type(
 );
 
 create table equipment(
-  serial_number VARCHAR2(30),
+  serial_number VARCHAR2(15),
   designation VARCHAR2(10),
   id_number NUMBER(10,0),
   maintenance_status VARCHAR2(5)
@@ -119,7 +119,7 @@ create table mission_crew(
 );
 
 create table loadout(
-  serial_number VARCHAR2(30),
+  serial_number VARCHAR2(15),
   designation VARCHAR2(10),
   mission_number VARCHAR2(6),
   id_number NUMBER(10,0),
