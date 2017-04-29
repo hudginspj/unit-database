@@ -1,24 +1,7 @@
-/*select e1.first_name || ' ' || e1.last_name as full_name, d1.department_name, l1.city
-from (employees e1 
-  left outer join departments d1 ON e1.department_id = d1.department_id) 
-  left outer join locations l1 ON l1.location_id = d1.LOCATION_ID
-  left outer join jobs j1 ON j1.job_id = e1.job_id
-where j1.job_title LIKE '%Manager%'
-  AND j1.job_title NOT LIKE '%Sales%'*/
-  
-/*select first_name, count(*) as repetitions
-from employees
-group by first_name
-order by (0 - count(*));*/
+--This should populate a drop-down menu for platoons
+select platoon_name from platoon;
 
-/*select department_id, department_name, avg_salary, num_employees
-from departments natural join
-(select department_id, AVG(salary) as avg_salary, COUNT(*) as num_employees
-from employees
-group by department_id
-having AVG(salary) > 5500
-  and COUNT (*) >= 2); */
-
+--This should take in platoon_name as a variable, and be displayed in the master roster for that platoon
 select vehicle_order as vic, mil_rank as rank, last_name as last, first_name as first, blood_type as BT,  rifle, pistol, nvg, optic
 from (marine m1
     left outer join (select platoon_name, vehicle_order, vehicle_number from vehicle) v1 on m1.vehicle_number = v1.vehicle_number
@@ -31,6 +14,7 @@ where v1.platoon_name = '2ND'
 order by v1.vehicle_order
 ;
 
+--This should take in platoon_name as a variable, and be displayed in the master roster for that platoon
 select vehicle_order as vic, designation, serial_number, last_name
 from (marine m1
     natural join (select platoon_name, vehicle_order, vehicle_number from vehicle)-- v1 on m1.vehicle_number = v1.vehicle_number
@@ -45,6 +29,7 @@ where platoon_name = '2ND'
 order by vehicle_order
 ;
 
+--This should take in platoon_name as a variable, and be displayed in the master roster for that platoon
 ((select 'PERSONNEL' as item, count(*) as count 
   from (marine natural join vehicle)
   where platoon_name = '2ND'
