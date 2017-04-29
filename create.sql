@@ -6,6 +6,7 @@ drop table mission;
 
 drop table equipment;
 drop table equipment_type;
+alter table marine drop column vehicle_number;
 drop table vehicle;
 drop table platoon;
 
@@ -28,10 +29,10 @@ create table address(
 
 create table marine (
   id_number NUMBER(10,0),
-  first_name VARCHAR2(30) NOT NULL,
+  first_name VARCHAR2(30),
   last_name VARCHAR2(30) NOT NULL,
   mil_rank VARCHAR2(8) NOT NULL,
-  mil_occupation NUMBER(4,0) NOT NULL,
+  mil_occupation NUMBER(4,0),
   blood_type VARCHAR2(3),
   address_id NUMBER(10, 0),
   phone_number NUMBER(10,0),
@@ -90,11 +91,12 @@ create table equipment_type(
 create table equipment(
   serial_number VARCHAR2(30),
   designation VARCHAR2(10),
-  marine_id NUMBER(10,0),
+  id_number NUMBER(10,0),
   maintenance_status VARCHAR2(5)
     constraint ckMaint check (maintenance_status in ('UP', 'DOWN', 'AWAY')),
   primary key (serial_number, designation),
-  foreign key (designation) references equipment_type
+  foreign key (designation) references equipment_type,
+  foreign key (id_number) references marine
 );
 
 create table mission(
