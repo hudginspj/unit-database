@@ -167,15 +167,15 @@ insert into equipment (serial_number, designation, id_number, maintenance_status
 insert into equipment (serial_number, designation, id_number, maintenance_status)
  values ('747457', 'M120', 1000000005, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
- values ('757596', 'RADIO', 1000000001, 'UP');
+ values ('757596', 'PRC-160', 1000000001, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
- values ('856856', 'RADIO', 1000000004, 'UP');
+ values ('856856', 'PRC-160', 1000000004, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
- values ('9656856', 'RADIO', 1000000007, 'UP');
+ values ('9656856', 'PRC-160', 1000000007, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
  values ('3636434', 'M2', 1000000008, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
- values ('8564545', 'COMPASS', 1000000001, 'UP');
+ values ('8564545', 'COMPASS', 1000000002, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
  values ('4753634', 'COMPASS', 1000000004, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
@@ -190,34 +190,4 @@ insert into equipment (serial_number, designation, id_number, maintenance_status
   primary key (serial_number, designation),
   foreign key (designation) references equipment_type
 );*/
-
-/*create table mission(
-  mission_number VARCHAR2(6),
-  description VARCHAR2(500),
-  start_date DATE,
-  end_date DATE,
-  destination VARCHAR2(30),
-  primary key (mission_number)
-);*/
-
-/*create table mission_crew(
-  mission_number VARCHAR2(6),
-  id_number NUMBER(10, 0),
-  vehicle_number NUMBER(6,0),
-  primary key (mission_number, id_number),
-  foreign key (mission_number) references mission,
-  foreign key (id_number) references marine,
-  foreign key (vehicle_number) references vehicle
-);*/
-
-/*create table loadout(
-  serial_number VARCHAR2(30),
-  designation VARCHAR2(10),
-  mission_number VARCHAR2(6),
-  id_number NUMBER(10,0),
-  primary key (serial_number, mission_number),
-  foreign key (serial_number, designation) references equipment,
-  foreign key (mission_number, id_number) references mission_crew
-);
-*/
 
