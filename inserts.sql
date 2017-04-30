@@ -89,6 +89,15 @@ insert into equipment_type (designation, description) values ('COMPASS', 'Compas
   primary key (designation)
 );*/
 
+
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('5554532', 'M16', null, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('4571514', 'M16', null, 'UP');
+insert into equipment (serial_number, designation, id_number, maintenance_status)
+ values ('45798234', 'M16', null, 'UP');
+
+
 insert into equipment (serial_number, designation, id_number, maintenance_status)
  values ('6363466', 'M9', 1000000001, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
@@ -165,7 +174,7 @@ insert into equipment (serial_number, designation, id_number, maintenance_status
 insert into equipment (serial_number, designation, id_number, maintenance_status)
  values ('2552355', 'M120', 1000000002, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
- values ('747457', 'M120', 1000000005, 'UP');
+ values ('747457', 'M120', 1000000001, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)
  values ('757596', 'PRC-160', 1000000001, 'UP');
 insert into equipment (serial_number, designation, id_number, maintenance_status)

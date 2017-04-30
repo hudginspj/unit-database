@@ -2,6 +2,7 @@
 
 drop table loadout;
 drop table mission_crew;
+drop table mission_vehicle;
 drop table mission;
 
 drop table equipment;
@@ -108,14 +109,22 @@ create table mission(
   primary key (mission_number)
 );
 
+
+create table mission_vehicle(
+  mission_number VARCHAR2(6),
+  vehicle_number NUMBER(6,0),
+  primary key (mission_number, vehicle_number),
+  foreign key (mission_number) references mission,
+  foreign key (vehicle_number) references vehicle
+);
+
 create table mission_crew(
   mission_number VARCHAR2(6),
   id_number NUMBER(10, 0),
   vehicle_number NUMBER(6,0),
   primary key (mission_number, id_number),
-  foreign key (mission_number) references mission,
-  foreign key (id_number) references marine,
-  foreign key (vehicle_number) references vehicle
+  foreign key (mission_number, vehicle_number) references mission_vehicle,
+  foreign key (id_number) references marine
 );
 
 create table loadout(
