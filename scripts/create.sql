@@ -102,10 +102,10 @@ create table equipment(
 
 create table mission(
   mission_number VARCHAR2(6),
-  description VARCHAR2(500),
   start_date DATE,
   end_date DATE,
   destination VARCHAR2(30),
+  description VARCHAR2(500),
   primary key (mission_number)
 );
 

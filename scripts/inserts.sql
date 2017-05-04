@@ -200,3 +200,4 @@ insert into equipment (serial_number, designation, id_number, maintenance_status
   foreign key (designation) references equipment_type
 );*/
 
+commit;

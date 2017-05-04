@@ -91,4 +91,3 @@ update equipment
   where serial_number = '747457'
   and designation = 'M120';
 
-
