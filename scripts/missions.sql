@@ -65,3 +65,8 @@ select * from loadout;
   foreign key (mission_number, id_number) references mission_crew
 );
 */
+delete from loadout where mission_number = 'XM1001';
+delete from mission_crew where mission_number = 'XM1001';
+
+
+exec mission_defaults('XM1001');

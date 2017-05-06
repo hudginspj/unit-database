@@ -21,3 +21,10 @@ values ( , , , , )
 update marine
   set mil_rank = 'blah', mil_occupation = 0341, phone_number =:, nok_phone_number =:
   where id_number = 1000000001;
+  
+  
+--select * from equipment where id_number = 1000000001;
+--select * from equipment where designation = 'M16';
+--update equipment set id_number = 1000000001 where serial_number = 36633646; 
+--select * from equipment where designation = 'M16';
+

@@ -114,7 +114,7 @@ create table mission_vehicle(
   mission_number VARCHAR2(6),
   vehicle_number NUMBER(6,0),
   primary key (mission_number, vehicle_number),
-  foreign key (mission_number) references mission,
+  foreign key (mission_number) references mission on delete cascade,
   foreign key (vehicle_number) references vehicle
 );
 
@@ -123,7 +123,7 @@ create table mission_crew(
   id_number NUMBER(10, 0),
   vehicle_number NUMBER(6,0),
   primary key (mission_number, id_number),
-  foreign key (mission_number, vehicle_number) references mission_vehicle,
+  foreign key (mission_number, vehicle_number) references mission_vehicle on delete cascade,
   foreign key (id_number) references marine
 );
 
@@ -133,12 +133,12 @@ create table loadout(
   mission_number VARCHAR2(6),
   id_number NUMBER(10,0),
   primary key (serial_number, mission_number),
-  foreign key (serial_number, designation) references equipment,
-  foreign key (mission_number, id_number) references mission_crew
+  foreign key (serial_number, designation) references equipment on delete cascade,
+  foreign key (mission_number, id_number) references mission_crew on delete cascade
 );
 
 
 alter table marine
-  add foreign key (vehicle_number) references vehicle;
+  add foreign key (vehicle_number) references vehicle on delete set null;
 
 commit;

@@ -46,4 +46,5 @@ from ((select * from mission_crew natural join marine) m1
     left outer join (select serial_number as nvg, id_number from loadout where designation = 'PAS-28') e3 on m1.id_number = e3.id_number
     left outer join (select serial_number as optic, id_number from loadout where designation = 'MDO') e4 on m1.id_number = e4.id_number
     )*/
-select * from mission_roster;
+select * from mission_roster where mission_number = 'XM1001';
+

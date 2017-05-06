@@ -42,7 +42,7 @@ BEGIN
             v_serial);
     commit;
   END LOOP;
-  CLOSE c1;
+  CLOSE c2;
 END;
 
 
